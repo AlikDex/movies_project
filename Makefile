@@ -1,5 +1,5 @@
 init: init-ci vue-ready
-	
+
 init-ci: docker-down-clear \
 	vue-clear \
 	docker-pull docker-build docker-up \
@@ -35,7 +35,7 @@ docker-build:
 	docker compose build --pull
 
 vue-clear:
-	docker run --rm -v ${PWD}/vue:/app -w /app alpine sh -c 'rm -rf .ready dist'
+	docker run --rm -v ${PWD}/front:/app -w /app alpine sh -c 'rm -rf .ready dist'
 
 vue-init: vue-npm-install
 
@@ -43,7 +43,7 @@ vue-npm-install:
 	docker compose run --rm vue-node-cli npm instal
 
 vue-ready:
-	docker run --rm -v ${PWD}/vue:/app -w /app alpine touch .ready
+	docker run --rm -v ${PWD}/front:/app -w /app alpine touch .ready
 
 vue-lint:
 	docker compose run --rm vue-node-cli npm run lint
