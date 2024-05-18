@@ -21,14 +21,14 @@ services:
       - traefik.enable=true
       - traefik.docker.network=movies-network
       - traefik.http.routers.traefik.entrypoints=http
-      - traefik.http.routers.traefik.rule=Host(`traefik.movies.lc`)
+      - traefik.http.routers.traefik.rule=Host(`traefik.movies.localhost`)
       - traefik.http.services.traefik.loadBalancer.server.port=80
 
   vue-node:
     build:
       context: front/docker/development/node
     volumes:
-      - ./vue:/app:rw
+      - ./front:/app:rw
     command: sh -c "until [ -f .ready ] ; do sleep 1 ; done && npm run dev"
     tty: true
 
@@ -36,13 +36,13 @@ services:
     build:
       context: front/docker/development/node
     volumes:
-      - ./vue:/app
+      - ./front:/app
 
   vue:
     build:
       context: front/docker/development/nginx
     volumes:
-      - ./vue:/app:rw
+      - ./front:/app:rw
     networks:
       - movies-network
       - default
@@ -50,7 +50,7 @@ services:
       - traefik.enable=true
       - traefik.docker.network=movies-network
       - traefik.http.routers.vue.entrypoints=http
-      - traefik.http.routers.vue.rule=Host(`movies.lc`)
+      - traefik.http.routers.vue.rule=Host(`movies.localhost`)
       - traefik.http.services.vue.loadBalancer.server.port=80
 
 networks:
