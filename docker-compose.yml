@@ -1,18 +1,57 @@
-version: '3.8'
-
+version: "3.9"
 services:
-  frontend:
-    build:
-      context: .
-      dockerfile: ./Dockerfile
-    volumes:
-      - .:/app
-      - node_modules:/app/node_modules/
-    ports:
-      - '8001:8001'
-    environment:
-      NODE_ENV: development
+    traefik:
+        image: "traefik:3.0.0"
+        container_name: "traefik"
+        command:
+            --api.dashboard=true
+            --api.insecure=true
+            --providers.docker=true
+            --providers.docker.exposedByDefault=false
+        ports:
+            - "80:80"
+            - "8080:8080"
+        networks:
+            - traefik-public
+            - default
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+        labels:
+            - traefik.enable=true
+            - traefik.docker.network=traefik-public
+            - traefik.http.routers.traefik.entrypoints=http
+            - traefik.http.routers.traefik.rule=Host(`traefik.localhost`) || Host(`www.traefik.localhost`)
+            - traefik.http.services.traefik.loadBalancer.server.port=80
 
-volumes:
-  node_modules:
-    external: true
+    vue-node:
+        build:
+            context: vue/docker/development/node
+        volumes:
+            - ./vue:/app:rw
+        command: sh -c "until [ -f .ready ] ; do sleep 1 ; done && npm run dev"
+        tty: true
+
+    vue-node-cli:
+        build:
+            context: vue/docker/development/node
+        volumes:
+            - ./vue:/app
+
+    vue:
+        build:
+            context: vue/docker/development/nginx
+        volumes:
+            - ./vue:/app:rw
+        networks:
+            - traefik-public
+            - default
+        labels:
+            - traefik.enable=true
+            - traefik.docker.network=traefik-public
+            - traefik.http.routers.vue.entrypoints=http
+            - traefik.http.routers.vue.rule=Host(`vue.localhost`) || Host(`www.vue.localhost`)
+            - traefik.http.services.vue.loadBalancer.server.port=80
+
+networks:
+    traefik-public:
+        name: traefik-public
