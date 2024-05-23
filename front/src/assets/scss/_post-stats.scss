@@ -1,0 +1,31 @@
+.post-stats {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__label {
+    display: none;
+
+    @include media-breakpoint-up(md) {
+      display: inline-block;
+      margin-right: 5px;
+    }
+  }
+
+  &__item {
+    color: $post-stats-item-color;
+    display: flex;
+    font-size: 1rem;
+    align-items: baseline;
+    margin-right: 1rem;
+    white-space: nowrap;
+
+    & > .icon {
+      color: $post-stats-item-icon-color;
+    }
+
+    & > .img-icon {
+      width: 1rem;
+      margin: 0 5px;
+    }
+  }
+}

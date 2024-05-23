@@ -1,0 +1,9 @@
+.page-section {
+  margin-bottom: $page-section-margin-bottom;
+
+  &__title {
+    margin: 0.875rem 0;
+    font-size: $page-section-title-font-size;
+    line-height: $page-section-title-line-height;
+  }
+}

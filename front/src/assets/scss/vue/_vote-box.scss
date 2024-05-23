@@ -1,0 +1,115 @@
+.vote-box {
+  width: 220px;
+
+  @include media-breakpoint-up(md) {
+    width: 250px;
+  }
+
+  .vote-box__buttons {
+    display: flex;
+  }
+
+  &__like,
+  &__dislike {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 50px;
+    padding: 5px 8px 5px 12px;
+    border-top: solid 1px lighten($vote-box-buttons-bg, 25%);
+    border-bottom: solid 1px darken($vote-box-buttons-bg, 25%);
+    border-left: none;
+    border-right: none;
+    background: $vote-box-buttons-bg;
+    border-radius: $vote-box-border-radius;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+    &:hover {
+      border-top: solid 1px lighten($vote-box-buttons-hover-bg, 25%);
+      border-bottom: solid 1px darken($vote-box-buttons-hover-bg, 15%);
+      background: $vote-box-buttons-hover-bg;
+      cursor: pointer;
+    }
+  }
+
+  &__like {
+    color: $vote-box-like-color;
+
+    &:hover {
+      color: $vote-box-like-hover-color;
+    }
+  }
+
+  &__dislike {
+    color: $vote-box-dislike-color;
+
+    &:hover {
+      color: $vote-box-dislike-hover-color;
+    }
+  }
+
+  &__value {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /*&__vote {
+    height: 100%;
+    width: 20%;
+
+    &.-like {
+      background: #6fb800 url(../svg/like.svg) no-repeat center center;
+      background-size: auto 50%;
+
+      &:hover {
+        background-color: #5ba400;
+        cursor: pointer;
+      }
+    }
+
+    &.-dislike {
+      background: #f34800 url(../svg/like.svg) no-repeat center center;
+      background-size: auto 50%;
+      transform: rotate(180deg);
+
+      &:hover {
+        background-color: #df3400;
+        cursor: pointer;
+      }
+    }
+
+    &.disabled {
+      opacity: 0.8;
+
+      &:hover {
+        cursor: not-allowed;
+      }
+    }
+  }*/
+
+  &__rate-info {
+    width: 60%;
+    text-align: center;
+    color: #f0f0f0;
+    height: 100%;
+    font-size: 16px;
+    vertical-align: top;
+    padding: 15px 10px 0 10px;
+    background-color: #282828;
+  }
+
+  &__progress-bar {
+    background-color: $vote-box-dislike-color;
+    height: 4px;
+    width: 100%;
+    margin-top: 3px;
+  }
+
+  &__progress {
+    background-color: $vote-box-like-color;
+    height: 4px;
+  }
+}

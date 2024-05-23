@@ -1,0 +1,15 @@
+.page-desc {
+  margin: 1rem 0;
+  font-size: 14 * 0.0625rem;
+  line-height: 1.4;
+
+  & > p {
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

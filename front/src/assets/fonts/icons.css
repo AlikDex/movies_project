@@ -1,0 +1,88 @@
+@font-face {
+    font-family: "icons";
+    src: url("./icons.eot?d67a797f656d91d054da4610a117b07e#iefix") format("embedded-opentype"),
+url("./icons.woff2?d67a797f656d91d054da4610a117b07e") format("woff2"),
+url("./icons.woff?d67a797f656d91d054da4610a117b07e") format("woff");
+}
+
+.icon {
+    display: inline-block;
+    width: 16px;
+    font-size: 16px;
+    vertical-align: middle;
+    outline: 0;
+    font-family: icons, serif !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+}
+.icon.-x2 {
+    width: 32px;
+    font-size: 32px;
+}
+
+.icon-angle-up:before {
+    content: "\f101";
+}
+.icon-bars:before {
+    content: "\f102";
+}
+.icon-calendar-days:before {
+    content: "\f103";
+}
+.icon-circle-play:before {
+    content: "\f104";
+}
+.icon-circle-stop:before {
+    content: "\f105";
+}
+.icon-clock:before {
+    content: "\f106";
+}
+.icon-eye:before {
+    content: "\f107";
+}
+.icon-flag:before {
+    content: "\f108";
+}
+.icon-heart:before {
+    content: "\f109";
+}
+.icon-home:before {
+    content: "\f10a";
+}
+.icon-image:before {
+    content: "\f10b";
+}
+.icon-images:before {
+    content: "\f10c";
+}
+.icon-magnifying-glass:before {
+    content: "\f10d";
+}
+.icon-power-off:before {
+    content: "\f10e";
+}
+.icon-stop:before {
+    content: "\f10f";
+}
+.icon-tag:before {
+    content: "\f110";
+}
+.icon-tags:before {
+    content: "\f111";
+}
+.icon-thumbs-down:before {
+    content: "\f112";
+}
+.icon-thumbs-up:before {
+    content: "\f113";
+}
+.icon-xmark:before {
+    content: "\f114";
+}
+.icon-youtube:before {
+    content: "\f115";
+}

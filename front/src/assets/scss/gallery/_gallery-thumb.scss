@@ -1,0 +1,114 @@
+.gallery-thumb {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-bottom: 5px;
+  background: $gallery-thumb-bg;
+  box-shadow: $gallery-thumb-box-shadow;
+  border-radius: $gallery-thumb-border-radius;
+  overflow: hidden;
+  outline: 0;
+
+  &__container {
+    display: block;
+    color: $gallery-thumb-color;
+    border-radius: $gallery-thumb-border-radius;
+    overflow: hidden;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+    &:hover,
+    &:active,
+    &:focus {
+      text-decoration: $gallery-thumb-text-decoration;
+      color: $gallery-thumb-hover-color;
+      cursor: pointer;
+    }
+  }
+
+  &__preview {
+    position: relative;
+    text-align: center;
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+
+    @media screen and (min-width: $screenSmall) {
+      max-height: 320px;
+    }
+
+    @include media-breakpoint-up(md) {
+      max-height: 350px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      max-height: 370px;
+    }
+  }
+
+  &__title {
+    display: block;
+    margin: 0;
+    padding: .1875rem .3125rem;
+    max-height: (.875rem * $gallery-thumb-line-height) * 2 + .1875rem * 2;
+    line-height: $gallery-thumb-line-height;
+    font-size: .875rem;
+    font-weight: 300;
+    overflow: hidden;
+
+    @include media-breakpoint-up(lg) {
+      max-height: (1rem * $gallery-thumb-line-height) * 2 + .1875rem * 2;
+      font-size: 1rem;
+    }
+
+    @supports (-webkit-line-clamp:2) {
+      display:-webkit-box;
+      -webkit-box-orient:vertical;
+      -webkit-line-clamp:2
+    }
+
+    &.-category {
+      display: block;
+      padding: .3125rem;
+      font-size: 1rem;
+      font-weight: 400;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+
+      @include media-breakpoint-up(lg) {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  &__imgs-num {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 2px 6px 1px;
+    background: rgba(0, 0, 0, 0.65);
+    font-size: .75rem;
+    line-height: 1.4;
+    color: #eee;
+    font-style: normal;
+    opacity: 0.7;
+    white-space: nowrap;
+    transition: opacity .25s 0s, visibility 0s 0s;
+
+    & i {
+      margin-right: 5 * .0625rem;
+    }
+  }
+
+  &:hover {
+    .thumb-overlay {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .25s 0s, visibility 0s .25s;
+    }
+  }
+}

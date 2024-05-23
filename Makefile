@@ -1,14 +1,14 @@
-init: init-ci vue-ready
+init: init-ci front-ready
 
 init-ci: docker-down-clear \
-	vue-clear \
+	front-clear \
 	docker-pull docker-build docker-up \
-	vue-init
+	front-init
 
 up: docker-up
 down: docker-down
 restart: down up
-lint: vue-lint
+lint: front-lint
 
 images:
 	docker images
@@ -34,16 +34,16 @@ docker-pull:
 docker-build:
 	docker compose build --pull
 
-vue-clear:
+front-clear:
 	docker run --rm -v ${PWD}/front:/app -w /app alpine sh -c 'rm -rf .ready dist'
 
-vue-init: vue-npm-install
+front-init: front-npm-install
 
-vue-npm-install:
-	docker compose run --rm vue-node-cli npm instal
+front-npm-install:
+	docker compose run --rm front-node-cli npm instal
 
-vue-ready:
+front-ready:
 	docker run --rm -v ${PWD}/front:/app -w /app alpine touch .ready
 
-vue-lint:
-	docker compose run --rm vue-node-cli npm run lint
+front-lint:
+	docker compose run --rm front-node-cli npm run lint

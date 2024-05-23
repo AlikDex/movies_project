@@ -1,0 +1,143 @@
+/**
+ * Блок пагинации.
+ */
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 1;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+
+  &.-top {
+    display:none
+  }
+
+  &.-to-right {
+    @include media-breakpoint-up(md) {
+      margin: 0 0 0 auto;
+    }
+  }
+
+  &.-to-left {
+    @include media-breakpoint-up(md) {
+      margin: 0 auto 0 0;
+    }
+  }
+
+  &.-to-center {
+    @include media-breakpoint-up(md) {
+      margin: 0 auto;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    &.-top {
+      display:flex;
+    }
+  }
+
+  &__item {
+    flex-grow: 1;
+    overflow: hidden;
+    box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.1);
+
+    &.dots {
+      box-shadow: none;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    &__item {
+      flex-grow: 0;
+    }
+  }
+
+  &__item + &__item {
+    margin-left: 4px;
+  }
+
+  &__item.delta2,
+  &__item.delta3,
+  &__item.delta4,
+  &__item.first,
+  &__item.last {
+    display: none;
+  }
+
+  @media screen and (min-width:480px) {
+    &__item.delta2 {
+      display: block;
+    }
+  }
+
+  @media screen and (min-width:640px) {
+    &__item.delta3 {
+      display: block;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    &__item.first,
+    &__item.last,
+    &__item.delta4 {
+      display: block;
+    }
+  }
+  &__item.dots {
+    flex-grow:0
+  }
+
+  &__link {
+    display: block;
+    padding: .6rem 1rem;
+    @if $pagination-link-border-radius != 0 {
+      border-radius: $pagination-link-border-radius;
+    }
+    background: $pagination-link-bg;
+    color: $pagination-link-color;
+    border-top: solid 1px lighten($pagination-link-bg, 25%);
+    border-bottom: solid 1px darken($pagination-link-bg, 25%);
+    font-size: 1rem;
+    text-decoration: none;
+    line-height: 1.25;
+    outline: 0;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+    &:hover,
+    &:active,
+    &:focus {
+      text-decoration:none;
+      background: $pagination-link-bg-hover;
+      color: $pagination-link-color-hover;
+      border-top: solid 1px lighten($pagination-link-bg-hover, 25%);
+      border-bottom: solid 1px darken($pagination-link-bg-hover, 15%);
+    }
+  }
+
+  &__item.disabled &__link {
+    pointer-events:none;
+    cursor:not-allowed
+  }
+
+  &__item.active &__link {
+    text-decoration:none;
+    background: $pagination-link-bg-active;
+    color: $pagination-link-color-active;
+    border-top: solid 1px lighten($pagination-link-bg-active, 25%);
+    border-bottom: solid 1px darken($pagination-link-bg-active, 25%);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75)
+  }
+
+  &__item.dots &__link {
+    background: none;
+    border: none;
+    padding:.6rem .4rem;
+    font-size: .875rem;
+    font-weight: normal;
+    color: $pagination-dots-color;
+    text-shadow: 1px 1px 0 #000;
+    letter-spacing: 2px;
+  }
+}

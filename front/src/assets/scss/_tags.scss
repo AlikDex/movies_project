@@ -1,0 +1,39 @@
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tag {
+  display: inline-block;
+  border-top: solid 1px lighten($tag-bg, 25%);
+  border-bottom: solid 1px darken($tag-bg, 25%);
+  padding: 0 10px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  border-radius: $tag-border-radius;
+  background: $tag-bg;
+  color: $tag-color;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: $tag-box-shadow;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+    color: $tag-hover-color;
+    background: $tag-hover-bg;
+    cursor: pointer;
+    border-top: solid 1px lighten($tag-hover-bg, 25%);
+    border-bottom: solid 1px darken($tag-hover-bg, 15%);
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

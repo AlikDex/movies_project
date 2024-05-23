@@ -1,0 +1,27 @@
+.content {
+  display: flex;
+  flex-grow: 1;
+
+  &__lside {
+    @include media-breakpoint-up(lg) {
+      width: 300px;
+      flex-shrink: 0;
+      display: block;
+      padding-right: 15px;
+    }
+  }
+
+  &__main {
+    flex-grow: 1;
+  }
+
+  &__rside {
+    width: 100%;
+
+    @include media-breakpoint-up(lg) {
+      width: 300px;
+      flex-shrink: 0;
+      padding-left: 15px;
+    }
+  }
+}

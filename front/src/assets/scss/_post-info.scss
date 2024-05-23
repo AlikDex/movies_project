@@ -1,0 +1,25 @@
+.post-info {
+  margin-top: 10px;
+
+  &__item {
+    display: block;
+
+    @include media-breakpoint-up(lg) {
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__label {
+    display: block;
+    min-width: 120px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    line-height: 1.2;
+    color: $post-info-label-color;
+    white-space: nowrap;
+  }
+}

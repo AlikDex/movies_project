@@ -1,0 +1,66 @@
+.tag-group {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.875rem;
+  column-width: 140px;
+  column-count: 2;
+  columns: 140px 2;
+
+  @media screen and (min-width: 460px) {
+    column-width: 200px;
+    column-count: 6;
+    columns: 200px 6;
+  }
+
+  &__group {
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__header {
+    display: block;
+    color: $success;
+    font-size: 18 * 0.0625rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin: 0 0 5px;
+    border-bottom: 1px solid #444;
+
+    @media screen and (min-width: 425px) {
+      font-size: 16 * 0.0625rem;
+    }
+  }
+
+  &__to-letter {
+    @media screen and (min-width: 425px) {
+      display: none;
+    }
+  }
+}
+
+.tag-link {
+  display: block;
+  color: $tag-link-color;
+  text-decoration: none;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  outline: 0;
+
+  &:hover,
+  &:active,
+  &:hover {
+    color: $tag-link-hover-color;
+    text-decoration: $tag-link-hover-decoration;
+  }
+
+  &.active {
+    color: $tag-link-active-color;
+    font-weight: 400;
+  }
+}

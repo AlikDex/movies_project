@@ -1,0 +1,169 @@
+.flag-form {
+  &__row {
+    margin-bottom: 10px;
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 3px;
+    font-size: 0.875rem;
+    color: $body-color;
+  }
+
+  &__input, &__textarea {
+    background: none;
+    color: $gray-900;
+    border: 1px solid $gray-600;
+    padding: 7px 12px;
+    outline: 0;
+    font-size: 0.875rem;
+    height: 100%;
+    width: 100%;
+    line-height: 1;
+    transition: box-shadow .2s ease;
+
+    &::placeholder {
+      color: $gray-600;
+    }
+
+    &:focus {
+      border: 1px solid  $primary;
+    }
+  }
+
+  &__textarea {
+    max-width: 100%;
+    min-height: 2.125rem;
+  }
+
+  &__btn {
+    //box-shadow: none;
+    margin-left: 0.5rem;
+    //background: #212529;
+    //color: #fff;
+    //border-color: #212529;
+
+    &:focus,
+    &:active {
+      box-shadow: none;
+    }
+
+    &:active:focus {
+      box-shadow: none!important;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__reported-message {
+    color: #3dc10c;
+  }
+}
+
+.flag-form-errors {
+  &__message {
+    color: #ec3333;
+  }
+}
+
+/**
+ * Modal form
+ */
+.flag-modal {
+  background: $body-bg;
+  color: $body-color;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 37px;
+    padding: 4px 7px;
+    border-bottom: $header-border-size solid $header-border-color;
+    background: $header-bg;
+  }
+
+  &__title {
+    margin: 0;
+    line-height: 1;
+  }
+
+  &__body {
+    padding: 10px 7px;
+  }
+}
+
+/* возможно надо добавить 10px слева и справа */
+.flag-form-container {
+  padding: 0 10px;
+}
+
+/**
+ * Reason list
+ */
+.flag-reason-list {
+  display: block;
+  list-style: none;
+  margin: 0 0 10px 0;
+  padding: 0;
+
+  & & {
+    padding-left: 20px;
+  }
+
+  &__reason {
+    margin-bottom: 5px;
+  }
+
+  &__label {
+    display: inline-flex;
+    align-items: center;
+    margin: 0;
+    color: $body-color;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__reason {
+    & input[type=radio] + span {
+      display: inline-block;
+      margin-left: 5px;
+    }
+
+    & input[type=radio]:checked + span {
+      font-weight: 700;
+    }
+  }
+}
+
+.close-modal {
+  display: inline-block;
+  border: 0;
+  background: none;
+  margin: 0;
+  margin-left: auto;
+  padding: 5px;
+  line-height: 1;
+  outline: 0;
+  fill: #b3b3b3;
+
+  &:hover {
+    cursor: pointer;
+    fill: red;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  & > svg {
+    display: inline-block;
+    width: 1.6rem;
+    vertical-align: middle;
+  }
+}

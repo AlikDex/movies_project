@@ -1,0 +1,26 @@
+body {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  width: 100%;
+}
+
+.wrapper {
+  margin-right: auto;
+  margin-left:  auto;
+  width: 100%;
+  max-width: 1920px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.main {
+  flex-grow: 1;
+}

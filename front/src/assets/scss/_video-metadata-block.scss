@@ -1,0 +1,22 @@
+.video-metadata-block {
+  &__item {
+    display: inline-flex;
+    text-decoration: none;
+    color: var(--text-color-spec-secondary);
+    font-size: $thumb-info-item-font-size;
+    line-height: $thumb-info-item-line-height;
+    white-space: nowrap;
+
+    & .icon {
+      width: $thumb-info-item-font-size;
+      font-size: $thumb-info-item-font-size;
+      margin-right: 4 * 0.0625rem;
+      color: $thumb-info-icon-color;
+    }
+  }
+
+  &>&__item:not(:first-of-type):before {
+    content: "•";
+    margin: 0 4px;
+  }
+}

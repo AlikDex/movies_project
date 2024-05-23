@@ -1,0 +1,34 @@
+.top-menu {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: auto;
+
+  &__item {
+    &.active {
+      & .top-menu__link {
+        color: $top-menu-active-item-color;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 8px 10px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    outline: 0;
+
+    @include media-breakpoint-up(md) {
+      font-size: 1.3rem;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      text-decoration: none;
+      background:  $top-menu-item-hover-bg;
+    }
+  }
+}

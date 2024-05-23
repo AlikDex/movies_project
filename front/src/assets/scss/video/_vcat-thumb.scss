@@ -1,0 +1,77 @@
+/**
+ * Styles for video categories thumbnails
+ */
+a.vcat-thumb {
+  text-decoration: none;
+}
+
+.vcat-thumb {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: $vcat-thumb-color;
+  background: $vcat-thumb-bg;
+  border-radius: $vcat-thumb-border-radius;
+  box-shadow: $vcat-thumb-box-shadow; // 0 1px 0 rgba(255, 255, 255, .05)
+  overflow: hidden;
+
+  &__cover {
+    position: relative;
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+    padding: 0 8px;
+  }
+
+  &__title {
+    display: block;
+    margin: 0;
+    padding: 0;
+    max-height: $vcat-thumb-title-font-size * $vcat-thumb-title-line-height * 2;
+    font-size: $vcat-thumb-title-font-size;
+    line-height: $vcat-thumb-title-line-height;
+    overflow: hidden;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+    @include media-breakpoint-up(lg) {
+      max-height: $vcat-thumb-title-font-size * 1.15 * $vcat-thumb-title-line-height * 2;
+      font-size: $vcat-thumb-title-font-size * 1.15;
+    }
+
+    @supports (-webkit-line-clamp: 2) {
+      display:-webkit-box;
+      -webkit-box-orient:vertical;
+      -webkit-line-clamp:2
+    }
+  }
+
+  &:hover &__title,
+  &:active &__title,
+  &:focus &__title {
+    text-decoration: $vcat-thumb-text-decoration;
+    color: $vcat-thumb-hover-color;
+    cursor: pointer;
+  }
+
+  & .vids-num {
+    margin-left: auto;
+    padding-left: 8px;
+    font-size: 0.8125rem;
+    white-space: nowrap;
+    color: $vcat-thumb-vids-num-color;
+  }
+
+  &:hover .vids-num {
+    text-decoration: none;
+  }
+}

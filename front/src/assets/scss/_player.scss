@@ -1,0 +1,15 @@
+.player {
+  position: relative;
+  margin: 0 -10px;
+
+  @media screen and (max-width: 991px) and (orientation: landscape) {
+    max-width: calc(100vh * 1.775);
+    margin: 0 auto;
+  }
+
+  @include aspect-ratio(16, 9);
+
+  @include media-breakpoint-up(lg) {
+    margin: 0;
+  }
+}

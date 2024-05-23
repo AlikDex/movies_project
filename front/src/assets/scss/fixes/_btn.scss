@@ -1,0 +1,19 @@
+.btn {
+  font-weight: 300;
+  text-shadow: 1px 1px 3px rgb(0, 0, 0, 0.4);
+
+  &.btn-primary {
+    border-top: solid 1px lighten($primary, 15%);
+    border-bottom: solid 1px darken($primary, 15%);
+  }
+
+  &.btn-secondary {
+    border-top: solid 1px lighten($secondary, 15%);
+    border-bottom: solid 1px darken($secondary, 15%);
+  }
+
+  &.btn-success {
+    border-top: solid 1px lighten($success, 15%);
+    border-bottom: solid 1px darken($success, 15%);
+  }
+}

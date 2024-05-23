@@ -1,0 +1,11 @@
+.gallery-info {
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

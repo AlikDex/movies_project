@@ -1,0 +1,129 @@
+.video-thumb {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-bottom: 5px;
+  background: $video-thumb-bg;
+  box-shadow: $video-thumb-box-shadow;
+  border-radius: $video-thumb-border-radius;
+  overflow: hidden;
+
+  &__container {
+    display: block;
+    color: $video-thumb-color;
+    border-radius: $video-thumb-border-radius;
+    overflow: hidden;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+    &:hover,
+    &:active,
+    &:focus {
+      text-decoration: $video-thumb-text-decoration;
+      color: $video-thumb-hover-color;
+      cursor: pointer;
+    }
+  }
+
+  &__preview {
+    position: relative;
+
+    &:hover .thumb-overlay {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  &__title {
+    display: block;
+    margin: 0;
+    max-height: $video-thumb-title-font-size * $video-thumb-title-line-height * 2;
+    font-size: $video-thumb-title-font-size;
+    font-weight: 300;
+    line-height: $video-thumb-title-line-height;
+    overflow: hidden;
+
+    @include media-breakpoint-up(lg) {
+      max-height: $video-thumb-title-font-size * 1.15 * $video-thumb-title-line-height * 2;
+      font-size: $video-thumb-title-font-size * 1.15;
+    }
+
+    @supports (-webkit-line-clamp: 2) {
+      display:-webkit-box;
+      -webkit-box-orient:vertical;
+      -webkit-line-clamp:2
+    }
+
+    &.-strong {
+      display: block;
+      font-size: 1rem;
+      font-weight: 700;
+
+      @include media-breakpoint-up(lg) {
+        font-size: 1.2rem;
+      }
+    }
+
+    &.-single {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+
+  &__meta {
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 5px;
+    font-size: .75rem;
+
+    @include media-breakpoint-up(lg) {
+      font-size: .875rem;
+    }
+  }
+
+  .thumb__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: auto;
+    z-index: 99;
+  }
+
+  &__touch-play {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 25px;
+    background: rgba(10,10,10,.5);
+    border-radius: 3px;
+    opacity: .6;
+
+    @include media-breakpoint-up(lg) {
+      display:none
+    }
+
+    & .icon {
+      display: block;
+      margin: 0;
+      width: 19px;
+      font-size: 19px;
+      height: auto;
+      color: white;
+    }
+  }
+}
+
+.video-thumbnail {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  min-height: 1px;
+  min-width: 1px;
+  object-fit: cover;
+  background-color: transparent;
+}

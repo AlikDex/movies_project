@@ -1,0 +1,62 @@
+.footer {
+  $indent: 10 * .0625rem;
+  margin-top: 30px;
+  padding: $indent 0;
+  background-color: #111;
+  border-top: 1px solid #333;
+
+  > .d-flex,
+  > .d-sm-flex,
+  > .d-md-flex,
+  > .d-lg-flex {
+    align-items: center;
+  }
+
+  &__logo {
+    min-width: 300px;
+    margin-bottom: $indent;
+
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__info {
+    flex-grow: 1;
+    margin-bottom: $indent;
+
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__counters {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    min-width: 300px;
+  }
+
+  &__row {
+    margin-bottom: $indent;
+    line-height: 1.2;
+    text-align: center;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    color: $link-color;
+    text-decoration: none;
+    outline: 0;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $link-hover-color;
+      text-decoration: $link-hover-decoration;
+    }
+  }
+}
