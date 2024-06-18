@@ -1,6 +1,4 @@
 :root {
-  --text-color-spec-primary: #{$text-color-spec-primary};
-  --text-color-spec-secondary: #{$text-color-spec-secondary};
   --text-color-spec-primary: #0f0f0f;
   --text-color-spec-secondary: #6c757d;
   --body-color: #0f0f0f;
@@ -11,9 +9,19 @@
   --spec-20-percent-layer: rgba(0, 0, 0, .2);
   --spec-30-percent-layer: rgba(0, 0, 0, .3);
   --thumbs-gap: #{$thumbs-gap};
-  --fake-progress-bg: #{$fake-progress-bg};
-  --fake-progress-color: #{$fake-progress-color};
+  --fake-progress-bg: #000000;
+  --fake-progress-color: #dc3545;
   --fake-progress-height: #{$fake-progress-height};
+
+  --content-sort-item-box-shadow: var(--interactive-elements-box-shadow);
+  --content-sort-link-bg: #e9ecef;
+  --content-sort-link-color: var(--text-color-spec-primary);
+  --content-sort-link-active-bg: #000000;
+  --content-sort-link-active-color: #ffffff;
+  --content-sort-link-border-radius: var(--interactive-elements-border-radius);
+  --content-sort-link-hover-bg: #cbd3da;
+  --content-sort-link-hover-color: var(--text-color-spec-primary);
+
   --pagination-gap: var(--interactive-elements-gap);
   --pagination-link-border-radius: var(--interactive-elements-border-radius);
   --pagination-link-bg: #e9ecef;
