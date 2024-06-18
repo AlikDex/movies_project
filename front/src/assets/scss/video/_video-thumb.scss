@@ -3,16 +3,14 @@
   flex-direction: column;
   height: 100%;
   padding-bottom: 5px;
-  background: $video-thumb-bg;
-  box-shadow: $video-thumb-box-shadow;
-  border-radius: $video-thumb-border-radius;
+  //background: $video-thumb-bg;
+  //box-shadow: $video-thumb-box-shadow;
+  //border-radius: $video-thumb-border-radius;
   overflow: hidden;
 
   &__container {
     display: block;
     color: $video-thumb-color;
-    border-radius: $video-thumb-border-radius;
-    overflow: hidden;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
     &:hover,
@@ -26,6 +24,8 @@
 
   &__preview {
     position: relative;
+    border-radius: $video-thumb-preview-border-radius;
+    overflow: hidden;
 
     &:hover .thumb-overlay {
       opacity: 0;
@@ -38,8 +38,9 @@
     margin: 0;
     max-height: $video-thumb-title-font-size * $video-thumb-title-line-height * 2;
     font-size: $video-thumb-title-font-size;
-    font-weight: 300;
+    font-weight: 500;
     line-height: $video-thumb-title-line-height;
+    color: var(--text-color-spec-primary);
     overflow: hidden;
 
     @include media-breakpoint-up(lg) {
@@ -78,16 +79,6 @@
     @include media-breakpoint-up(lg) {
       font-size: .875rem;
     }
-  }
-
-  .thumb__video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    width: 100%;
-    height: auto;
-    z-index: 99;
   }
 
   &__touch-play {

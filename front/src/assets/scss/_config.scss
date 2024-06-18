@@ -21,8 +21,9 @@ $dark:          $gray-900 !default;
 //
 // Settings for the `<body>` element.
 $body-text-align:           null !default;
-$body-color:                $gray-800 !default;
+$body-color:                #0f0f0f !default;
 $body-bg:                   $gray-100;
+$text-color-spec-primary: #0f0f0f !default;
 $text-color-spec-secondary: $gray-600 !default;
 
 // Links
@@ -80,13 +81,12 @@ $thumbs-margin-top: 0;
 $thumbs-margin-bottom: 0;
 
 // Video list thumbs thumbs
-$video-thumb-bg: #fff;
 $video-thumb-box-shadow: 0 1px 0 rgba(255, 255, 255, .05);
-$video-thumb-border-radius: $border-radius;
+$video-thumb-preview-border-radius: $border-radius;
 $video-thumb-color: $body-color;
 $video-thumb-hover-color: $primary;
-$video-thumb-title-font-size: 0.875rem;
-$video-thumb-title-line-height: 1.3;
+$video-thumb-title-font-size: 1rem;
+$video-thumb-title-line-height: 1.1;
 $video-thumb-text-decoration: $link-hover-decoration;
 
 // Video categories thumbs

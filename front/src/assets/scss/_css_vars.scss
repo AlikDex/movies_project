@@ -1,5 +1,9 @@
 :root {
+  --text-color-spec-primary: #{$text-color-spec-primary};
   --text-color-spec-secondary: #{$text-color-spec-secondary};
+  --spec-10-percent-layer: rgba(0, 0, 0, .1);
+  --spec-20-percent-layer: rgba(0, 0, 0, .2);
+  --spec-30-percent-layer: rgba(0, 0, 0, .3);
   --thumbs-gap: #{$thumbs-gap};
   --fake-progress-bg: #{$fake-progress-bg};
   --fake-progress-color: #{$fake-progress-color};
