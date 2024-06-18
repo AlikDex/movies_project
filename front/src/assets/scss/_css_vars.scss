@@ -1,6 +1,12 @@
 :root {
   --text-color-spec-primary: #{$text-color-spec-primary};
   --text-color-spec-secondary: #{$text-color-spec-secondary};
+  --text-color-spec-primary: #0f0f0f;
+  --text-color-spec-secondary: #6c757d;
+  --body-color: #0f0f0f;
+  --interactive-elements-border-radius: 5px;
+  --interactive-elements-gap: 6px;
+  --interactive-elements-box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.15);
   --spec-10-percent-layer: rgba(0, 0, 0, .1);
   --spec-20-percent-layer: rgba(0, 0, 0, .2);
   --spec-30-percent-layer: rgba(0, 0, 0, .3);
@@ -8,4 +14,14 @@
   --fake-progress-bg: #{$fake-progress-bg};
   --fake-progress-color: #{$fake-progress-color};
   --fake-progress-height: #{$fake-progress-height};
+  --pagination-gap: var(--interactive-elements-gap);
+  --pagination-link-border-radius: var(--interactive-elements-border-radius);
+  --pagination-link-bg: #e9ecef;
+  --pagination-link-color: var(--text-color-spec-primary);
+  --pagination-link-bg-hover: #cbd3da;
+  --pagination-link-color-hover: var(--text-color-spec-primary);
+  --pagination-link-bg-active: #000000;
+  --pagination-link-color-active: #ffffff;
+  --pagination-dots-color: #878787;
+  --pagination-item-box-shadow: var(--interactive-elements-box-shadow);
 }

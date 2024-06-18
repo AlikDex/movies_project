@@ -67,8 +67,6 @@ $page-section-title-font-size: 1.25rem;
 $page-section-title-line-height: 1.3;
 
 // Fake progress bar
-$fake-progress-bg:          $black;
-$fake-progress-color:       $red;
 $fake-progress-height:      3px;
 
 // Thumbs
@@ -126,24 +124,14 @@ $tag-link-hover-color: $link-hover-color;
 $tag-link-active-color: #f64c4c;
 $tag-link-hover-decoration: $link-hover-decoration;
 
-// Thumbs sort
-$thumbs-sort-link-bg: $secondary;
-$thumbs-sort-link-hover-bg: darken($secondary, 7%);
-$thumbs-sort-link-color: $white;
-$thumbs-sort-link-hover-color: $white;
-$thumbs-sort-link-active-bg: $primary;
-$thumbs-sort-link-active-color: $black;
-$thumbs-sort-link-border-radius: 4px;
-
-// Pagination
-$pagination-link-color: $body-color;
-$pagination-link-color-hover: $body-color;
-$pagination-link-bg: $secondary;
-$pagination-link-bg-hover: darken($secondary, 7%);
-$pagination-link-color-active: $black;
-$pagination-link-bg-active: $primary;
-$pagination-dots-color: #878787;
-$pagination-link-border-radius: 3px;
+// Content sort
+$content-sort-link-bg: $gray-200;
+$content-sort-link-hover-bg: darken($gray-200, 10%);
+$content-sort-link-color: $body-color;
+$content-sort-link-hover-color: $body-color;
+$content-sort-link-active-bg: $black;
+$content-sort-link-active-color: $white;
+$content-sort-link-border-radius: 5px;
 
 // See more
 $see-more-width: 100%;
