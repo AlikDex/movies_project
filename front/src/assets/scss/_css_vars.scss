@@ -2,6 +2,10 @@
   --text-color-spec-primary: #0f0f0f;
   --text-color-spec-secondary: #6c757d;
   --body-color: #0f0f0f;
+
+  --link-decoration: none;
+  --link-hover-decoration: none;
+
   --interactive-elements-border-radius: 5px;
   --interactive-elements-gap: 6px;
   --interactive-elements-box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.15);
@@ -32,4 +36,8 @@
   --pagination-link-color-active: #ffffff;
   --pagination-dots-color: #878787;
   --pagination-item-box-shadow: var(--interactive-elements-box-shadow);
+
+  --footer-background-c: #030303;
+  --footer-text-primary: #fff;
+  --footer-text-secondary: #aaa;
 }

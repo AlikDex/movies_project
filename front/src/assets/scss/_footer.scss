@@ -2,8 +2,8 @@
   $indent: 10 * .0625rem;
   margin-top: 30px;
   padding: $indent 0;
-  background-color: #111;
-  border-top: 1px solid #333;
+  background-color: var(--footer-background-c);
+  color: var(--footer-text-primary);
 
   > .d-flex,
   > .d-sm-flex,
@@ -48,15 +48,15 @@
   }
 
   &__link {
-    color: $link-color;
-    text-decoration: none;
+    color: var(--footer-text-secondary);
+    text-decoration: var(--link-decoration);
     outline: 0;
 
     &:hover,
     &:focus,
     &:active {
-      color: $link-hover-color;
-      text-decoration: $link-hover-decoration;
+      color: var(--footer-text-primary);
+      text-decoration: var(--link-hover-decoration);
     }
   }
 }
