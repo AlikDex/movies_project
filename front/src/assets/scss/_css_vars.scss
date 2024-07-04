@@ -17,6 +17,11 @@
   --fake-progress-color: #dc3545;
   --fake-progress-height: #{$fake-progress-height};
 
+  --border-color--divider: rgba(0, 0, 0, 0.1);
+
+  --top-menu-link-bg-active: #cbd3da;
+  --top-menu-link-bg-hover: #cbd3da;
+
   --content-sort-item-box-shadow: var(--interactive-elements-box-shadow);
   --content-sort-link-bg: #e9ecef;
   --content-sort-link-color: var(--text-color-spec-primary);
@@ -36,6 +41,13 @@
   --pagination-link-color-active: #ffffff;
   --pagination-dots-color: #878787;
   --pagination-item-box-shadow: var(--interactive-elements-box-shadow);
+
+  --vote-box-button-bg: #e9ecef;
+  --vote-box-button-bg-hover: #cbd3da;
+  --vote-box-button-like-c: #198754;
+  --vote-box-button-like-c-hover: #115c39;
+  --vote-box-button-dislike-c: #dc3545;
+  --vote-box-button-dislike-c-hover: #bd2130;
 
   --footer-background-c: #030303;
   --footer-text-primary: #fff;

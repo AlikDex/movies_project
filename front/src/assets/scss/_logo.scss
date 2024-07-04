@@ -11,10 +11,18 @@
     margin-right: 20px;
   }
 
+  &__img {
+    margin-right: 5px;
+    display: block;
+    width: auto;
+    height: 40px;
+    object-fit: contain;
+  }
+
   &__link {
     display: flex;
     height: 40px;
-    align-items: center
+    align-items: center;
   }
 
   &__title {
@@ -34,26 +42,8 @@
       text-decoration: none;
     }
 
-    &__img {
-      display: block;
-      width: auto;
-      height: 40px;
-      object-fit: contain;
-    }
-
     > span {
       color: $logo-title-highlight-color;
-    }
-
-    > img {
-      height: .7em;
-      width: auto;
-      display: inline-block;
-      margin-left: 5px;
-
-      @include media-breakpoint-up(xs) {
-        height: .75em;
-      }
     }
   }
 

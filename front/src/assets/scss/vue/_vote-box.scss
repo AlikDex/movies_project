@@ -17,35 +17,29 @@
     width: 60px;
     height: 50px;
     padding: 5px 8px 5px 12px;
-    border-top: solid 1px lighten($vote-box-buttons-bg, 25%);
-    border-bottom: solid 1px darken($vote-box-buttons-bg, 25%);
-    border-left: none;
-    border-right: none;
-    background: $vote-box-buttons-bg;
-    border-radius: $vote-box-border-radius;
+    background: var(--vote-box-button-bg);
+    border-radius: var(--interactive-elements-border-radius);
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
     &:hover {
-      border-top: solid 1px lighten($vote-box-buttons-hover-bg, 25%);
-      border-bottom: solid 1px darken($vote-box-buttons-hover-bg, 15%);
-      background: $vote-box-buttons-hover-bg;
+      background: var(--vote-box-button-bg-hover);
       cursor: pointer;
     }
   }
 
   &__like {
-    color: $vote-box-like-color;
+    color: var(--vote-box-button-like-c);
 
     &:hover {
-      color: $vote-box-like-hover-color;
+      color: var(--vote-box-button-like-c-hover);
     }
   }
 
   &__dislike {
-    color: $vote-box-dislike-color;
+    color: var(--vote-box-button-dislike-c);
 
     &:hover {
-      color: $vote-box-dislike-hover-color;
+      color: var(--vote-box-button-dislike-c-hover);
     }
   }
 
@@ -102,14 +96,14 @@
   }
 
   &__progress-bar {
-    background-color: $vote-box-dislike-color;
+    background-color: var(--vote-box-button-dislike-c);
     height: 4px;
     width: 100%;
     margin-top: 3px;
   }
 
   &__progress {
-    background-color: $vote-box-like-color;
+    background-color: var(--vote-box-button-like-c);
     height: 4px;
   }
 }
